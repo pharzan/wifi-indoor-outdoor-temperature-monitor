@@ -141,7 +141,8 @@ void loop() {
   // Draw local sensor temperature
   String localTempStr = "Sensor Temp: " + String(localSensorTemp) + "C";
   u8g2.drawStr(0, 40, localTempStr.c_str());
-
+  Serial.print("Sensor: ");
+  Serial.println(localSensorTemp);
   // Draw API temperature if available
   if (!isnan(currentApiTemperature)) {
     String apiTempStr = "API Temp: " + String(currentApiTemperature) + "C";
